@@ -1,5 +1,5 @@
-# zvb-test-automation
-Test automation project for the ZVB application using Cypress and Cucumber.
+# itallent-test-automation
+Test automation project for the I-Tallent session using Cypress.
 
 # Overview
 - Basic info
@@ -28,10 +28,14 @@ profiles will result in a different result. Chaining scripts is also possible by
 ```json
 {
   "scripts": {
-    "zip-artifacts": "bestzip test-results.zip ./test-results/*",
-    "local": "cypress open",
+    "cypress-open": "cypress open --config-file=cypress.json",
+    "cypress-run-sanity": "npm run clean-data && npm run sanity && npm run report",
+    "sanity": "npx cypress-tags run --config-file=cypress.json  --env TAGS='@sanity'",
     "report": "node cypress/support/generate_report.js",
-    "sanity": "npx cypress-tags run -e TAGS='@sanity'"
+    "clean-data": "npm run clean-report && npm run clean-videos && npm run clean-screenshots",
+    "clean-report": "rm -rf ./cypress/reports",
+    "clean-videos": "rm -rf ./cypress/videos",
+    "clean-screenshots": "rm -rf ./cypress/screenshots"
   }
 }
 ```
@@ -42,13 +46,12 @@ parameters can be chained by comma separation.
 
 The way we  use them in this project is to:
 1. choose which tests to run (smoke, sanity, regression)
-2. to overwrite values (jenkins credentials store)
 3...
 
 ```json
 {
   "scripts": {
-      "sanity": "npx cypress-tags run --env TAGS=@sanity"
+      "sanity": "npx cypress-tags run --config-file=cypress.json --env TAGS=@sanity"
     }
 }
 ```

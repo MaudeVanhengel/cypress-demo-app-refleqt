@@ -1,6 +1,6 @@
-
-Feature: login
-  this feature checks the availability of the homepage and its blocks.
+@sanity
+Feature: MyFirstFeature
+  this feature checks the availability of the coolblue homepage.
 
   Background:
     Given I navigate to the homepage of coolblue
@@ -12,8 +12,8 @@ Feature: login
 
   Scenario: Parametrized - Correct login
     When  I login with:
-      | username | nick.vandyck@hotmail.com |
-      | password | test1234                 |
+      | username | test@hotmail.com |
+      | password | test             |
     Then  I see the my account page
 
   Scenario: Failed login

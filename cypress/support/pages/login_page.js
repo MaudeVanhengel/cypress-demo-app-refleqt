@@ -18,8 +18,7 @@ class login_page {
   }
 
   get submitBtn() {
-    return cy.get('.coolblue-content .js-login-form')
-    .find('button')
+    return cy.get('.js-login-page-password-forgotten .button--order')
     .contains('Inloggen')
   }
 
@@ -46,12 +45,12 @@ class login_page {
   * */
 
   enterEmail(email) {
-    this.emailTxtFld.type(email)
+    this.emailTxtFld.type(email, {delay: 200})
     return this
   }
 
   enterPassword(pass) {
-    this.passwordTxtFld.type(pass)
+    this.passwordTxtFld.type(pass, {delay: 200})
     return this
   }
 

@@ -1,8 +1,8 @@
 import {Given, When} from 'cypress-cucumber-preprocessor/steps';
 import home_page from '../pages/home_page';
 
-before(() => {
- cy.viewport(1680,987)
+beforeEach(() => {
+ cy.viewport(1920,1080)
 })
 
 afterEach(() => {

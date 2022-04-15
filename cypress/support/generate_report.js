@@ -4,7 +4,7 @@ const path = require("path");
 const args = process.argv;
 
 const cucumberJsonDir = args[2] || "./cucumber-json";
-const screenshotsDir = args[3] || "./screenshots/features";
+const screenshotsDir = args[3] || "./screenshots";
 const videosDir = args[4] || "./videos";
 
 const featureToFileMap = {};
@@ -85,5 +85,5 @@ const report = require('multiple-cucumber-html-reporter');
 
 report.generate({
     jsonDir: jsonPath,
-    reportPath: './test-results',
+    reportPath: './reports',
 });

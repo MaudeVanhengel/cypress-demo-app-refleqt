@@ -1,7 +1,7 @@
 {
   "url" : "https://www.coolblue.be",
-  "username" : "nick.vandyck@hotmail.com",
-  "password" : "test1234",
+  "username" : "test@hotmail.com",
+  "password" : "test",
   "testFiles": "**/*.feature",
   "pageLoadTimeout": 60000,
   "retries": {
