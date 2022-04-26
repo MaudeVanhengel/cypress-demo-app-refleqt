@@ -23,7 +23,10 @@
   "dependencies": {
     "fs-extra": "^9.1.0",
     "jquery": "^3.5.1",
-    "multiple-cucumber-html-reporter": "^1.18.0"
+    "multiple-cucumber-html-reporter": "^1.18.0",
+    "cypress-cucumber-preprocessor": "^4.0.1",
+    "cucumber": "^6.0.7"
+ 
   },
   "keywords": [
     "cypress",
@@ -31,6 +34,7 @@
     "testing"
   ],
   "devDependencies": {
+    "cucumber": "^6.0.7",
     "cypress": "^8.1.0",
     "cypress-cucumber-preprocessor": "^4.0.1",
     "cypress-downloadfile": "^1.2.0"

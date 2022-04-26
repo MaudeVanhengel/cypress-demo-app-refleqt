@@ -58,19 +58,7 @@ class home_page {
     this.productTiles
     .find('.product-card__title')
     .contains(productName).parent().parent().parent().within((el) => {
-      datatable.forEach(row => {
-        let field = row[0]
-        let value = row[1]
-
-        switch (field) {
-          case 'price':
-            cy.get('.sales-price__current').contains(value)
-
-            break;
-          default:
-            throw new Error(`option for ${field} is not available`)
-        }
-      })
+      el.get('.sales-price__current').contains(datatable.get('price'))
     })
     return this
   }
@@ -112,6 +100,9 @@ class home_page {
     return this
   }
 
+  validateHomepage() {
+    cy.title().should('contain', 'Coolblue - alles voor een glimlach')
+  }
 }
 
 export default new home_page()

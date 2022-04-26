@@ -46,3 +46,7 @@ Given('I pre-authenticate and am on homepage', function () {
   .enterPassword(Cypress.config('password'))
   .clickSubmit();
 });
+
+Then('I am on the homepage', () => {
+  home_page.validateHomepage()
+})
